@@ -1,0 +1,119 @@
+/* CSS RESETS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2; /* Set shorter line heights on headings and interactive elements */
+  text-wrap: balance; /* Balance text wrapping on headings */
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* For accessibility purposes only */
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); /* Legacy property for Internet Explorer */
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* FONTS */
+
+/* plus-jakarta-sans-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/plus-jakarta-sans-v12-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* plus-jakarta-sans-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/plus-jakarta-sans-v12-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* plus-jakarta-sans-800 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/plus-jakarta-sans-v12-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* CUSTOM VARIABLES */
+
+:root {
+
+    /* COLORS */
+
+    --clr-blue-900: hsl(233, 54%, 16%);
+    --clr-blue-600: hsl(234, 25%, 52%);
+    --clr-pink-600: hsl(341, 92%, 62%);
+    --clr-pink-300: hsl(341, 100%, 83%);
+    --clr-grey: hsl(232, 10%, 56%);
+    --clr-white: hsl(0, 0%, 100%);
+    --gradient-pink: linear-gradient(to top, hsl(322, 87%, 55%), hsl(13, 100%, 64%));
+    --gradient-purple: linear-gradient(to bottom, hsl(237, 100%, 64%), hsl(322, 87%, 55%));
+
+    /* TYPOGRAPHY */
+    --ff-main: "Plus Jakarta Sans", sans-serif;
+    --fs-body: 1.125rem;
+
+    /* SPACINGS */
+
+    --space-100: 0.5rem;
+    --space-150: 0.75rem;
+    --space-200: 1rem;
+    --space-250: 1.25rem;
+    --space-300: 1.5rem;
+    --space-400: 2rem;
+    --space-500: 2.5rem;
+    --space-550: 2.75rem;
+    --space-600: 3rem;
+    --space-700: 3.5rem;
+    --space-800: 4rem;
+    --space-1000: 5rem;
+    --space-1600: 8rem;
+    --space-1800: 9rem;
+}
+
