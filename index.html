@@ -23,9 +23,11 @@
               class="nav__logo"
               src="assets/logo-dark.svg"
               alt="skilled home"
+              width="112"
+              height="29"
             />
           </a>
-          <a class="nav__action" href="#">Get Started</a>
+          <a class="btn btn--black" href="#">Get Started</a>
         </nav>
       </div>
     </header>
@@ -38,15 +40,22 @@
               Our modern courses across a range of in-demand skills will give you
               the knowledge you need to live the life you want.
             </p>
-            <a class="hero__link" href="">Get Started</a>
+            <a class="btn btn--orange" href="">Get Started</a>
           </div>
-          <picture>
-            <img class="hero__img" src="assets/image-hero-mobile.webp" alt="" />
+          <picture class="hero__img-container">
+            <source srcset="assets/image-hero-desktop.webp 1x, assets/image-hero-desktop@2x.webp 2x" type="image/webp" media="(min-width: 64em)" width="1046" height="938">
+            <source srcset="assets/image-hero-desktop.png 1x, assets/image-hero-desktop@2x.png 2x" type="image/png" media="(min-width: 64em)" width="1046" height="938">
+            <source srcset="assets/image-hero-tablet.webp 1x, assets/image-hero-tablet@2x.webp 2x" type="image/webp" media="(min-width: 48em)" width="695" height="723">
+            <source srcset="assets/image-hero-tablet.png 1x, assets/image-hero-tablet@2x.png 2x" type="image/png" media="(min-width: 48em)" width="695" height="723">
+            <source srcset="assets/image-hero-mobile.webp 1x, assets/image-hero-mobile@2x.webp 2x" type="image/webp" width="435" height="409">
+            <source srcset="assets/image-hero-mobile.png 1x, assets/image-hero-mobile@2x.png 2x" type="image/png" width="435" height="409">
+            <img class="hero__img" src="assets/image-hero-mobile.png" alt="" aria-hidden="true" width="435" height="409"/>
           </picture>
         </section>
         <section class="courses">
           <h2 class="courses__title">Check out our most popular courses!</h2>
           <div class="course">
+            <img class="course__tag" src="assets/icon-animation.svg" alt="" aria-hidden="true" width="56" height="56">
             <h3 class="course__title">Animation</h3>
             <p class="course__description">
               Learn the latest animation techniques to create stunning motion
@@ -55,6 +64,7 @@
             <a class="course__link" href="">Get Started</a>
           </div>
           <div class="course">
+            <img class="course__tag" src="assets/icon-design.svg" alt="" aria-hidden="true" width="56" height="56">
             <h3 class="course__title">Design</h3>
             <p class="course__description">
               Create beautiful, usable interfaces to help shape the future of how
@@ -63,6 +73,7 @@
             <a class="course__link" href="">Get Started</a>
           </div>
           <div class="course">
+            <img class="course__tag" src="assets/icon-photography.svg" alt="" aria-hidden="true" width="56" height="56">
             <h3 class="course__title">Photography</h3>
             <p class="course__description">
               Explore critical fundamentals like lighting, composition, and focus
@@ -71,6 +82,7 @@
             <a class="course__link" href="">Get Started</a>
           </div>
           <div class="course">
+            <img class="course__tag" src="assets/icon-crypto.svg" alt="" aria-hidden="true" width="56" height="56">
             <h3 class="course__title">Crypto</h3>
             <p class="course__description">
               All you need to know to get started investing in crypto. Go from
@@ -79,6 +91,7 @@
             <a class="course__link" href="">Get Started</a>
           </div>
           <div class="course">
+            <img class="course__tag" src="assets/icon-business.svg" alt="" aria-hidden="true" width="56" height="56">
             <h3 class="course__title">Business</h3>
             <p class="course__description">
               A step-by-step playbook to help you start, scale, and sustain your
@@ -91,8 +104,10 @@
     </main>
     <footer class="footer">
       <div class="wrapper">
-        <img class="footer__logo" src="assets/logo-light.svg" alt="skilled" />
-        <a class="footer__link" href="">Get Started</a>
+        <div class="footer__content">
+          <img class="footer__logo" src="assets/logo-light.svg" alt="skilled" />
+          <a class="btn btn--purple" href="">Get Started</a>
+        </div>
       </div>
     </footer>
   </body>

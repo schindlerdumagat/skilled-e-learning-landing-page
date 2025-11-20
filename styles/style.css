@@ -16,12 +16,6 @@ html {
   text-size-adjust: none;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  line-height: 1.5;
-}
-
 h1, h2, h3, h4 {
   line-height: 1.2; /* Set shorter line heights on headings and interactive elements */
   text-wrap: balance; /* Balance text wrapping on headings */
@@ -85,7 +79,6 @@ picture {
 :root {
 
     /* COLORS */
-
     --clr-blue-900: hsl(233, 54%, 16%);
     --clr-blue-600: hsl(234, 25%, 52%);
     --clr-pink-600: hsl(341, 92%, 62%);
@@ -100,7 +93,6 @@ picture {
     --fs-body: 1.125rem;
 
     /* SPACINGS */
-
     --space-100: 0.5rem;
     --space-150: 0.75rem;
     --space-200: 1rem;
@@ -115,5 +107,192 @@ picture {
     --space-1000: 5rem;
     --space-1600: 8rem;
     --space-1800: 9rem;
+
+    /* BORDER RADIUS */
+    --rounded-28: 1.75rem;
+    --rounded-15: 0.938rem;
 }
 
+body {
+  font-family: var(--ff-main);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--clr-grey);
+  background-color: var(--clr-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  max-width: 70rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  display: inline-block;
+  color: var(--clr-white);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: var(--rounded-28);
+  padding-block: clamp(0.6563rem, 1.328rem + -1.3995vw, 1rem);
+  padding-inline: clamp(1.5rem, 2.4771rem + -2.0356vw, 2rem);
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.btn--black {
+  background-color: var(--clr-blue-900);
+}
+
+.btn--black:hover {
+  background-color: var(--clr-blue-600);
+  opacity: 1;
+}
+
+.btn--orange {
+  background: var(--gradient-pink);
+}
+
+.btn--purple {
+  background: var(--gradient-purple);
+}
+
+.header, .main, .footer {
+  /* width: 100%; */
+  padding-inline: clamp(var(--space-250), -0.1813rem + 6.1069vw, var(--space-550));
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: clamp(var(--space-200), 0.5229rem + 2.0356vw, var(--space-300));
+}
+
+.hero {
+  display: grid;
+  gap: var(--space-600);
+  padding-block: var(--space-800);
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 1.3571rem + 2.381vw, 3.5rem);
+  font-weight: 800;
+  color: var(--clr-blue-900);
+  margin-block-end: var(--space-300);
+}
+
+.hero__description {
+  margin-block-end: var(--space-500);
+}
+
+.hero__img-container {
+  z-index: -1;
+  justify-self: center;
+}
+
+.courses {
+  display: grid;
+  row-gap: clamp(3.75rem, 2.0357rem + 3.5714vw, 5.25rem);
+  column-gap: clamp(var(--space-300), 0.9286rem + 1.1905vw, var(--space-400));
+  padding-block-start: var(--space-800);
+  padding-block-end: clamp(var(--space-1000), 1.1832rem + 16.285vw, var(--space-1800));
+}
+
+.courses__title {
+  font-size: clamp(1.5rem, 0.9286rem + 1.1905vw, 2rem);
+  font-weight: 800;
+  color: var(--clr-white);
+  background: var(--gradient-pink);
+  padding-inline: var(--space-400);
+  padding-block: clamp(var(--space-400), 0.0916rem + 8.1425vw, var(--space-800));
+  border-radius: var(--rounded-15);
+}
+
+.course {
+  position: relative;
+  padding: var(--space-800) var(--space-400) var(--space-500);
+  border-radius: var(--rounded-15);
+  box-shadow: 0 25px 50px rgba(6, 22, 141, 0.0442);
+}
+
+.course__tag {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  
+}
+
+.course__title {
+  font-size: clamp(1.25rem, 0.9643rem + 0.5952vw, 1.5rem);
+  font-weight: 800;
+  color: var(--clr-blue-900);
+  margin-block-end: var(--space-300);
+}
+
+.course__description {
+  margin-block-end: var(--space-300);
+}
+
+.course__link {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--clr-pink-600);
+}
+
+.footer {
+  padding-block: var(--space-300);
+  background-color: var(--clr-blue-900);
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (min-width: 48em) {
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-300);
+    align-items: center;
+    position: relative;
+    max-height: 34rem;
+    height: 100vh;
+  }
+
+  .hero__img-container {
+    position: absolute;
+    right: 0;
+    transform: translate(48%, -10%);
+  }
+
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+            
+@media screen and (min-width: 64em) {
+  .hero {
+    gap: var(--space-400);
+    max-height: 43rem;
+  }
+
+  .hero__img-container {
+    transform: translate(45%, -13%);
+  }
+
+  .btn {
+    padding-block: var(--space-200);
+    padding-inline: var(--space-400);
+  }
+
+  .courses {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
