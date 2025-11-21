@@ -139,12 +139,8 @@ body {
   border-radius: var(--rounded-28);
   padding-block: clamp(0.6563rem, 1.328rem + -1.3995vw, 1rem);
   padding-inline: clamp(1.5rem, 2.4771rem + -2.0356vw, 2rem);
-  transition: opacity 300ms, background-color 300ms;
-}
-
-.btn:hover {
+  transition: opacity 300ms ease, background-color 300ms ease;
   cursor: pointer;
-  opacity: 0.5;
 }
 
 .btn--black {
@@ -160,13 +156,29 @@ body {
   background: var(--gradient-pink);
 }
 
+.btn--orange:hover {
+  opacity: 0.5;
+}
+
 .btn--purple {
+  position: relative;
   background: var(--gradient-purple);
 }
 
-.btn--purple:hover {
-  opacity: 1;
-  background: var(--gradient-purple-light);
+.btn--purple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-color: var(--clr-white);
+  border-radius: inherit;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 300ms ease;
+}
+
+.btn--purple:hover::after {
+  opacity: 0.3;
 }
 
 .header, .main, .footer {
