@@ -248,6 +248,11 @@ body {
   text-decoration: none;
   color: var(--clr-pink-600);
   margin-block-start: auto;
+  transition: color 300ms;
+}
+
+.course__link:hover {
+  color: var(--clr-pink-300);
 }
 
 .footer {
